@@ -11,6 +11,7 @@ export default defineConfig({
         name: 'FFCM Field App',
         short_name: 'FFCM',
         description: 'Offline-first sea turtle nesting data capture — Campamentos Tortugueros',
+        lang: 'es',
         theme_color: '#1a0000',
         background_color: '#000000',
         display: 'standalone',
@@ -21,7 +22,10 @@ export default defineConfig({
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }
         ]
       },
-      workbox: { globPatterns: ['**/*.{js,css,html,ico,png,svg}'] }
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,svg}'],
+        navigateFallback: 'index.html',
+      }
     })
   ]
 })
